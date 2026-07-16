@@ -8,7 +8,10 @@ Analysis code for a pre-registered, multi-cohort transcriptomic meta-analysis of
 
 Systematic search of GEO, ArrayExpress/BioStudies, and SRA, screened to eight eligible bulk lung-tissue cohorts (seven discovery, one external validation) plus one single-cell reference.
 
-![PRISMA 2020 flow diagram](prisma_flow.png)
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="prisma_flow_dark.png">
+  <img alt="PRISMA 2020 flow diagram" src="prisma_flow.png">
+</picture>
 
 ## Pipeline overview
 
