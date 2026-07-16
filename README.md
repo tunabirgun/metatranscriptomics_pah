@@ -4,6 +4,12 @@ Analysis code for a pre-registered, multi-cohort transcriptomic meta-analysis of
 
 > Work in progress. Registered protocol: Zenodo [10.5281/zenodo.21399521](https://doi.org/10.5281/zenodo.21399521).
 
+## Study selection (PRISMA 2020)
+
+Systematic search of GEO, ArrayExpress/BioStudies, and SRA, screened to eight eligible bulk lung-tissue cohorts (seven discovery, one external validation) plus one single-cell reference.
+
+![PRISMA 2020 flow diagram](prisma_flow.png)
+
 ## Pipeline overview
 
 Scripts run in numeric order; each is independent and reads/writes intermediate files. `00_config.R` holds shared paths, the seed (1234), and the colour palette.
