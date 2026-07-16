@@ -42,6 +42,11 @@ Scripts run in numeric order; each is independent and reads/writes intermediate 
 **6 — Figures** (`08b`–`08d`)
 - Volcano, cross-cohort heatmap, forest plots, enrichment, single-cell, deconvolution, and validation figures, including multi-panel composites.
 
+**7 — Reviewer-response analyses** (`09a`–`09c`)
+- `09a_composition_adjusted.R` — composition-adjusted meta-analysis: adds cohort-level cell-type scores (ssGSEA) as covariates to separate per-cell regulation from cell-composition shifts, and reports which consensus genes survive.
+- `09b_leave_one_cohort_out.R` — leave-one-cohort-out validation: trains on six discovery cohorts, tests on the seventh, giving generalisation estimates beyond the single external cohort.
+- `09c_panel_diagnostics.R` — panel robustness: random-forest nested cross-validation, panel performance with KRT4/ITLN2 removed, single-cohort artefact check for the most significant genes, and the two-method (metafor ∩ RobustRankAggreg) intersection.
+
 ## Reproducing the environment
 
 The exact package set (R 4.6.1, Bioconductor 3.22/3.23, 291 packages) is pinned in `renv.lock`.
