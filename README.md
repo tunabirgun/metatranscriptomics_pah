@@ -33,14 +33,17 @@ Scripts run in numeric order; each is independent and reads/writes intermediate 
 
 **4 — Downstream characterisation** (`04`–`06`)
 - `04_functional_enrichment.R` — GO / KEGG / Reactome over-representation and gene-set enrichment (clusterProfiler, ReactomePA).
+- `04b_enrichment_expanded.R` — expanded over-representation across GO biological process, cellular component, and molecular function and KEGG pathways, for the diagnostic panel, the consensus signature, and the meta-significant genes (pooled and split by direction); GO terms collapsed with `simplify()`. Writes `TableS3c`.
+- `04c_enrichment_figures.R` — faceted GO/KEGG dot-plot figures from `04b` (Figure 5 consensus; Figures S2 panel and S3 up/down).
 - `05_singlecell_localisation.R` — rebuild the single-cell lung reference (Seurat) and assign each signature gene a cell-of-origin.
 - `06_deconvolution_ssgsea.R` — immune/stromal composition per cohort by ssGSEA (GSVA).
 
 **5 — Diagnostic panel** (`07`)
 - `07_classifier_validation.R` — per-cohort gene z-standardisation, LASSO logistic regression under nested cross-validation, and a single-shot evaluation on the held-out cohort (ROC/AUC, calibration).
+- `07b_insilico_qpcr.R` — **post-hoc** in silico qPCR (not part of the registered plan): per-sample expression of the 13 panel genes relative to the geometric mean of two reference genes (TBP, SDHA), on one microarray (GSE117261) and one RNA-seq (GSE254617) cohort; GAPDH is avoided because it is differentially expressed between PAH and control here. Per-gene violin plots (Figure 9) and `TableS9`.
 
 **6 — Figures** (`08b`–`08d`)
-- Volcano, cross-cohort heatmap, forest plots, enrichment, single-cell, deconvolution, and validation figures, including multi-panel composites.
+- Volcano, cross-cohort heatmap, forest plots, single-cell, deconvolution, and validation figures, including multi-panel composites. The enrichment figures (5, S2, S3) and the in-silico-qPCR figure (9) are produced by `04c` and `07b` above.
 
 **7 — Reviewer-response analyses** (`09a`–`09c`)
 - `09a_composition_adjusted.R` — composition-adjusted meta-analysis: adds cohort-level cell-type scores (ssGSEA) as covariates to separate per-cell regulation from cell-composition shifts, and reports which consensus genes survive.
