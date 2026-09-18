@@ -1,6 +1,7 @@
-# Shared configuration. Run scripts from the PROJECT ROOT directory
-# (e.g., Rscript submission/scripts/01b_preprocess_affymetrix.R). All paths are relative.
-# ROOT auto-detects whether you are at the project root or inside submission/scripts/.
+# Shared configuration. Run scripts from the PROJECT ROOT directory, i.e. the directory that
+# holds 02_acquisition/ and the other data folders (e.g., Rscript 01b_preprocess_affymetrix.R).
+# All paths are relative. ROOT auto-detects whether you are at the project root or inside a
+# submission/scripts/ sub-directory of it.
 ROOT <- if (dir.exists("02_acquisition")) "." else if (dir.exists("../../02_acquisition")) "../.." else "."
 .libPaths(c(file.path(ROOT, ".Rlib"), .libPaths()))
 suppressWarnings(suppressMessages({ set.seed(1234) }))

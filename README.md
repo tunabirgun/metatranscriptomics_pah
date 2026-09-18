@@ -63,15 +63,15 @@ Or build the container:
 
 ```bash
 docker build -t pah-pipeline .
-docker run -v /path/to/project:/data -w /data pah-pipeline Rscript submission/scripts/03a_meta_analysis.R
+docker run -v /path/to/project:/data -w /data pah-pipeline Rscript /pipeline/03a_meta_analysis.R
 ```
 
 ## Running
 
-Paths are relative; run from the project root (or from this folder — `00_config.R` auto-detects). Example:
+Paths are relative; run from the project root, the directory that holds the data folders (`02_acquisition/`, `03_preprocessing/`, …). In a clone of this repository that is the repository root, with the data folders placed beside the scripts; `00_config.R` also detects the two-level layout with the scripts in `submission/scripts/`. Example:
 
 ```bash
-Rscript submission/scripts/02_differential_expression.R
+Rscript 02_differential_expression.R
 ```
 
 ## Data

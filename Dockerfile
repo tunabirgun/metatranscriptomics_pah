@@ -20,5 +20,5 @@ RUN R -e "install.packages('renv', repos='https://cloud.r-project.org'); \
 # the scripts are copied into the image; the GEO input data is mounted at run time
 COPY . /pipeline
 # example:
-#   docker run -v /path/to/project:/data -w /data <image> Rscript submission/scripts/03a_meta_analysis.R
+#   docker run -v /path/to/project:/data -w /data <image> Rscript /pipeline/03a_meta_analysis.R
 CMD ["R"]
